@@ -21,7 +21,6 @@ public class MarcasController {
     // @CrossOrigin
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody List<Marca> marcas() {
-        System.out.println("PASSOU AQUI");
         return marcasService.getMarcasApiFipe();
     }
 }
