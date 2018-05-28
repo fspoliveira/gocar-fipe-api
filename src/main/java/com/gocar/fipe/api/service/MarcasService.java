@@ -11,23 +11,22 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.gocar.fipe.api.bean.Marca;
-import com.gocar.fipe.api.gocarfipeapi.GocarFipeApiApplication;
+import com.gocar.fipe.api.constants.RestEndpointsConstants;
 
 @Service
 public class MarcasService {
 
-    private static final Logger log = LoggerFactory.getLogger(GocarFipeApiApplication.class);
+    private static final Logger log = LoggerFactory.getLogger(MarcasService.class);
 
     public List<Marca> getMarcasApiFipe() {
 
         RestTemplate restTemplate = new RestTemplate();
 
-        ResponseEntity<List<Marca>> marcasResponse =
-            restTemplate.exchange("http://fipeapi.appspot.com/api/1/carros/marcas.json", HttpMethod.GET, null, new ParameterizedTypeReference<List<Marca>>() {});
+        ResponseEntity<List<Marca>> marcasResponse = restTemplate.exchange(RestEndpointsConstants.MARCAS_SERVICE_API, HttpMethod.GET, null, new ParameterizedTypeReference<List<Marca>>() {});
         List<Marca> listMarcas = marcasResponse.getBody();
 
         for (Marca item : listMarcas) {
-            log.info(item.getFipe_name());
+            log.info(item.getFipeName());
         }
 
         return listMarcas;
