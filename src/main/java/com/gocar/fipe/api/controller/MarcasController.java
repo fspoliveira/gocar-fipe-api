@@ -18,7 +18,6 @@ public class MarcasController {
     @Autowired
     private MarcasService marcasService;
 
-    // @CrossOrigin
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody List<Marca> marcas() {
         return marcasService.getMarcasApiFipe();

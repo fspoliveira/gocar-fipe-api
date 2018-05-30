@@ -5,10 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gocar.fipe.api.bean.Veiculo;
+import com.gocar.fipe.api.bean.Veiculos;
 import com.gocar.fipe.api.service.VeiculosService;
 
 @RestController
@@ -18,9 +19,8 @@ public class VeiculosController {
     @Autowired
     private VeiculosService veiculosService;
 
-    // @CrossOrigin
-    @RequestMapping(method = RequestMethod.GET)
-    public @ResponseBody List<Veiculo> marcas() {
-        return veiculosService.getVeiculosApiFipe();
+    @RequestMapping(method = RequestMethod.GET, params = { "idMarca" })
+    public @ResponseBody List<Veiculos> marcas(@RequestParam(name = "idMarca") String idMarca) {
+        return veiculosService.getVeiculosApiFipe(idMarca);
     }
 }

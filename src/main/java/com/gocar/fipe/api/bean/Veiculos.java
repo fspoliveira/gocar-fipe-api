@@ -4,18 +4,39 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = false)
-public class Marca {
+public class Veiculos {
+
+    @JsonProperty("fipe_marca")
+    private String fipeMarca;
 
     private String name;
 
-    @JsonProperty("fipe_name")
-    private String fipeName;
-
-    private String order;
+    private String marca;
 
     private String key;
 
     private String id;
+
+    @JsonProperty("fipe_name")
+    private String fipeName;
+
+    /**
+     * Gets the attribute fipeMarca.
+     *
+     * @return fipeMarca.
+     */
+    public String getFipeMarca() {
+        return fipeMarca;
+    }
+
+    /**
+     * Sets the attribute fipeMarca.
+     *
+     * @param fipeMarca to set the fipeMarca.
+     */
+    public void setFipeMarca(String fipeMarca) {
+        this.fipeMarca = fipeMarca;
+    }
 
     /**
      * Gets the attribute name.
@@ -36,21 +57,21 @@ public class Marca {
     }
 
     /**
-     * Gets the attribute order.
+     * Gets the attribute marca.
      *
-     * @return order.
+     * @return marca.
      */
-    public String getOrder() {
-        return order;
+    public String getMarca() {
+        return marca;
     }
 
     /**
-     * Sets the attribute order.
+     * Sets the attribute marca.
      *
-     * @param order to set the order.
+     * @param marca to set the marca.
      */
-    public void setOrder(String order) {
-        this.order = order;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
     /**

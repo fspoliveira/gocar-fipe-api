@@ -3,39 +3,36 @@ package com.gocar.fipe.api.bean;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties(ignoreUnknown = false)
 public class Veiculo {
 
-    @JsonProperty("fipe_marca")
-    private String fipeMarca;
+    @JsonProperty("fipe_codigo")
+    private String fipeCodigo;
 
     private String name;
 
-    private String marca;
-
     private String key;
+
+    private String veiculo;
 
     private String id;
 
-    @JsonProperty("fipe_name")
-    private String fipeName;
-
     /**
-     * Gets the attribute fipeMarca.
+     * Gets the attribute fipeCodigo.
      *
-     * @return fipeMarca.
+     * @return fipeCodigo.
      */
-    public String getFipeMarca() {
-        return fipeMarca;
+    public String getFipeCodigo() {
+        return fipeCodigo;
     }
 
     /**
-     * Sets the attribute fipeMarca.
+     * Sets the attribute fipeCodigo.
      *
-     * @param fipeMarca to set the fipeMarca.
+     * @param fipeCodigo to set the fipeCodigo.
      */
-    public void setFipeMarca(String fipeMarca) {
-        this.fipeMarca = fipeMarca;
+    public void setFipeCodigo(String fipeCodigo) {
+        this.fipeCodigo = fipeCodigo;
     }
 
     /**
@@ -57,24 +54,6 @@ public class Veiculo {
     }
 
     /**
-     * Gets the attribute marca.
-     *
-     * @return marca.
-     */
-    public String getMarca() {
-        return marca;
-    }
-
-    /**
-     * Sets the attribute marca.
-     *
-     * @param marca to set the marca.
-     */
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    /**
      * Gets the attribute key.
      *
      * @return key.
@@ -93,6 +72,24 @@ public class Veiculo {
     }
 
     /**
+     * Gets the attribute veiculo.
+     *
+     * @return veiculo.
+     */
+    public String getVeiculo() {
+        return veiculo;
+    }
+
+    /**
+     * Sets the attribute veiculo.
+     *
+     * @param veiculo to set the veiculo.
+     */
+    public void setVeiculo(String veiculo) {
+        this.veiculo = veiculo;
+    }
+
+    /**
      * Gets the attribute id.
      *
      * @return id.
@@ -108,24 +105,6 @@ public class Veiculo {
      */
     public void setId(String id) {
         this.id = id;
-    }
-
-    /**
-     * Gets the attribute fipeName.
-     *
-     * @return fipeName.
-     */
-    public String getFipeName() {
-        return fipeName;
-    }
-
-    /**
-     * Sets the attribute fipeName.
-     *
-     * @param fipeName to set the fipeName.
-     */
-    public void setFipeName(String fipeName) {
-        this.fipeName = fipeName;
     }
 
 }
