@@ -19,8 +19,9 @@ public class VeiculoController {
     @Autowired
     private VeiculoService veiculoService;
 
+    // http://localhost:8080/veiculo?idMarca=21&idVeiculo=4828
     @RequestMapping(method = RequestMethod.GET, params = { "idMarca", "idVeiculo" })
-    public @ResponseBody List<Veiculo> marcas(@RequestParam(name = "idMarca") String idMarca,
+    public @ResponseBody List<Veiculo> veiculo(@RequestParam(name = "idMarca") String idMarca,
         @RequestParam(name = "idVeiculo") String idVeiculo) {
         return veiculoService.getVeiculoApiFipe(idMarca, idVeiculo);
     }

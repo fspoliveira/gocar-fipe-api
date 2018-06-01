@@ -18,6 +18,7 @@ public class MarcasController {
     @Autowired
     private MarcasService marcasService;
 
+    // http://localhost:8080/marcas
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody List<Marca> marcas() {
         return marcasService.getMarcasApiFipe();

@@ -10,4 +10,9 @@ public class RestEndpointsConstants {
     // {0}=Id Marca
     // {1}=Id Veiculo
     public static final String VEICULO_SERVICE_API = "http://fipeapi.appspot.com/api/1/carros/veiculo/{0}/{1}.json";
+
+    // {0}=Id Marca
+    // {1}=Id Veiculo
+    // {2}=Fipe Codigo
+    public static final String VEICULO_VALOR_SERVICE_API = "http://fipeapi.appspot.com/api/1/carros/veiculo/{0}/{1}/{2}.json";
 }
